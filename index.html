@@ -87,12 +87,21 @@ tbody td{padding:0;border-bottom:1px solid var(--line);font-size:13px;}
 :root[data-theme="dark"] .tr2 .l{color:var(--teal);}
 .tr2 .v{font-family:var(--mono);font-size:11px;color:var(--sub);text-align:right;}
 .foot{font-size:12px;color:var(--mut);margin-top:20px;line-height:1.6;}
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  vertical-align:middle;margin-left:10px;padding:3px 9px;border-radius:20px;
+  background:var(--chip);color:var(--teal-ink);border:1px solid var(--chip-b);}
+:root[data-theme="dark"] .badge{color:var(--teal);}
+.switch{margin:0 0 20px;font-size:13px;}
+.switch a{display:inline-flex;align-items:center;gap:6px;color:rgb(var(--heat));text-decoration:none;
+  border:1px solid var(--line);border-radius:9px;padding:6px 12px;background:var(--surface);}
+.switch a:hover{border-color:rgb(var(--heat));}
 .hidden{display:none;}
 mark{background:rgba(var(--heat),.22);color:inherit;border-radius:3px;padding:0 2px;}
 </style>
 <div class="wrap">
-  <p class="eyebrow">A-share · 2026 · historical-high dashboard</p>
-  <h1>2026 A股每日创历史新高 · 概念板块看板</h1>
+  <p class="eyebrow">A-share · 2026 · historical-high dashboard · 前复权</p>
+  <h1>2026 A股每日创历史新高 · 概念板块看板<span class="badge">前复权口径</span></h1>
+  <p class="switch"><a href="buquan/">切换到「不复权」口径版本 →</a></p>
   <p class="lede">口径：以每支股票「上市至当日之前」的<b>前复权</b>历史最高价为基准，当日最高价<b>严格突破</b>即计为创历史新高；
   概念取自 Wind 概念板块表并剔除通用桶。<b>点击任意日期行</b>展开当日创新高个股与题材概念榜；
   下方过滤框可按概念或个股名快速定位。</p>
@@ -115,7 +124,7 @@ mark{background:rgba(var(--heat),.22);color:inherit;border-radius:3px;padding:0 
       <tbody id="tb"></tbody>
     </table>
   </div>
-  <p class="foot">数据来源：26年股价校正版.xlsx（前复权日度最高价）· wind概念板块.xlsx（概念归属）。
+  <p class="foot">数据来源：26年股价校正版.xlsx（前复权日度最高价） · wind概念板块.xlsx（概念归属）。
   同一个股可归属多个概念；概念计数为当日创新高个股所属概念累加。突破幅度 = 当日最高 / 历史前高 − 1。</p>
 </div>
 <script>
